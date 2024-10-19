@@ -1,14 +1,25 @@
 export function ProductCard() {
+    const product={
+        imgSrc: 'https://via.placeholder.com/128x128',
+        title: 'Product 1',
+        specification: [
+            "i8 Pro Items available",
+            "3 or 5 max sound",
+            "5 hours battery"
+        ],
+        price: 999,
+      };
+    
     return  <article>
-      <h2>Product Card</h2>
-      <img src="https://via.placeholder.com/128x128" alt="Product Image" />
+      <h2>{product.title}</h2>
+      <img src={product.imgSrc} alt={product.title} />
       <p>Product Description</p>
       <ul>
-        <li>Price: $99.99</li>
-        <li>Quantity: 10</li>
-        <li>Availability: In Stock</li>
+        <li>{product.specification[0]}</li>
+        <li>{product.specification[1]}</li>
+        <li>{product.specification[2]}</li>
       </ul>
-      <button>Buy from </button>
+      <button>{product.price}</button>
     </article>
     
   }

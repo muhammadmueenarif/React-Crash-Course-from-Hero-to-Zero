@@ -96,3 +96,7 @@ self closing like <img> tag and br. wrapping are like <div></div>.
 
 Next rule is camel case for naming props and attributes. camel case example is className.it is easy to convert 
 variables and keys of object so that's why camel case.  
+
+
+Lec 11. Using variables in JSX.
+ 
