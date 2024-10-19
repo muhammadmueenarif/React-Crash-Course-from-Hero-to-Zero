@@ -10,8 +10,13 @@ export function ProductCard() {
         price: 999,
       };
     
+      //using function to pass data. using function inside main rendering or return statement. 
+      function getProductTitle(title) {
+        return title;
+      }
+
     return  <article>
-      <h2>{product.title}</h2>
+      <h2>{getProductTitle(product.title)}</h2>
       <img src={product.imgSrc} alt={product.title} />
       <p>Product Description</p>
       <ul>
