@@ -57,3 +57,18 @@ in app.js remove all code inside return div. remove logo.svg and its import in a
 background and minheight,color of .app-header and paste in index.css. 
 in index.css, remove all except .app and write max width 960px, margin 0 auto, and padding 64,16,16px.  
 anything that will be returning will show on screen. 
+
+Lec 6. Developer tools.
+What is browser? developer tools? why we need? chrome browser developer tools let you edit pages directly and 
+diagnose problems easily. right click and inspect. first tab is element where we can see html Structure.
+we can edit it and click on elements to see its details. we can see different sizes and check responsiveness. 
+
+Next is console. we can see log messages here. in its network tab we can see loading files and requesting. 
+methods of requests get post etc., and other details. in the preview section we can see what is the response 
+of the request. 
+Next is application tab. we can see local storage, session storage, cookies, and cache. 
+
+Let's install react developer tools. open react developer tools. we can inspect our component with this tool.
+we can see props, hooks info. we can see state of different component and change it. install it for chrome 
+and add extension. it will show component and profiler in your console. we can see and inspect all the component.
+
