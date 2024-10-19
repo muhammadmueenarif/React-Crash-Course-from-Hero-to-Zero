@@ -16,4 +16,7 @@ One way Data Flow: Data flow only from parent to child. Child can't change data 
 to change data by events. 
 
 
-
+Lec 2. Environment Setup. 
+install vs code, node js(it has installed npm which is package manager for node). we will use npm to install libraries. 
+open terminal in vs code and type node --v to check installed version. npm --v. 
+ 
