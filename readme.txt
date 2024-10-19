@@ -84,3 +84,15 @@ of components and place all components in that folder. if we want to create sepa
 need to export it and then import the component in the file where we want to use it. 
 if we write export default component then we can import it directly but if we write export keyword before function
 keyword then we do not need to export it at the end of page. but we will need to import it in {}. 
+
+Lec 10. Writing Markup with JSX. 
+JSX has strcit rules. first is that we can only return one element from react component. if we want to return
+multiple components then we will wrap them inside a single tag. 
+issue is that if we render multiple elements then it can cause issue with rendering and synchronizing virtual 
+dom with real dom. if we render one component then it is easy and efficient for react to render and manage. 
+
+Next rule is close of text. JSX require text to be closed. 2 types self closing text and wrapping text. 
+self closing like <img> tag and br. wrapping are like <div></div>.
+
+Next rule is camel case for naming props and attributes. camel case example is className.it is easy to convert 
+variables and keys of object so that's why camel case.  
