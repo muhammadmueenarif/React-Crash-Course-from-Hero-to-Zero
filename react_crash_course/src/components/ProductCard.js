@@ -11,12 +11,14 @@ export function ProductCard() {
       };
     
       //using function to pass data. using function inside main rendering or return statement. 
-      function getProductTitle(title) {
-        return title;
-      }
+    //   function getProductTitle(title) {
+    //     return title;
+    //   }
 
-    return  <article>
-      <h2>{getProductTitle(product.title)}</h2>
+    return  <article style={{display:"flex", flexDirection:"column", justifyContent:"center", alignItems:"center"}}>
+        {/* <h2>{getProductTitle(product.title)}</h2> use this if want to use function to pass data*/}
+      
+      <h2 style={{fontSize:"30px", color:"red"}}>{product.title}</h2>
       <img src={product.imgSrc} alt={product.title} />
       <p>Product Description</p>
       <ul>

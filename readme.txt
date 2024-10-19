@@ -100,3 +100,4 @@ variables and keys of object so that's why camel case.
 
 Lec 11. Using variables in JSX.
 How to pass data as props or objects instead of writing it as directly. also learned how to call a function inside jsx. 
+we will use double curly braces to specify styles. style={{boreder:"10px"}}
