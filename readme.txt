@@ -51,3 +51,9 @@ robots.txt file to tell browser like google which file should be publically avai
 
 node modules to store all the dependencies like react, react dom, libraries etc.,  
 
+
+Lec 5. Cleaning Application. 
+in app.js remove all code inside return div. remove logo.svg and its import in app.js. in app.css, copy 
+background and minheight,color of .app-header and paste in index.css. 
+in index.css, remove all except .app and write max width 960px, margin 0 auto, and padding 64,16,16px.  
+anything that will be returning will show on screen. 
