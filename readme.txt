@@ -78,3 +78,9 @@ introduction.
 How to import and export. 
 
 Lec 8. create first react component. 
+Lec 9. Create separate component file. 
+in previous lecture we created a component in same app.js main file but in this we will create separate folder 
+of components and place all components in that folder. if we want to create separate component then first we 
+need to export it and then import the component in the file where we want to use it. 
+if we write export default component then we can import it directly but if we write export keyword before function
+keyword then we do not need to export it at the end of page. but we will need to import it in {}. 
