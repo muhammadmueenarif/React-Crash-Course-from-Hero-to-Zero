@@ -72,3 +72,9 @@ Let's install react developer tools. open react developer tools. we can inspect 
 we can see props, hooks info. we can see state of different component and change it. install it for chrome 
 and add extension. it will show component and profiler in your console. we can see and inspect all the component.
 
+
+Lec 7. Creating Components 
+introduction. 
+How to import and export. 
+
+Lec 8. create first react component. 
