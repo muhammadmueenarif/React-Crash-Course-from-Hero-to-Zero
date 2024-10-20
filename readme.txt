@@ -106,3 +106,11 @@ Lec 12. Passing props to components.
 React component use props to communicate with each other. parents pass data to child as props. once we pass 
 as props then we need to read that props in the child component where we want to access that. 
 it does not matter how many props we pass as all will be grouped under one object. 
+
+Lec 13. Components props manipulation. 
+we can use props keyword to access all props in child. if we want to use only one prop then we can pass it in 
+function parameter with its name like {product}. we can also use variables to access it like if we pass props keyword 
+in function parameter, then we can create variable below like const product= props.product; and use it where we want. 
+
+we can pass background="red" with props and use background keyword where we want to use it in component. 
+if we have multiple props and pass one prop with its name like card, we can use ...restProps to add other props. 
