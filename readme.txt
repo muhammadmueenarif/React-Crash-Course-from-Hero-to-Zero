@@ -114,3 +114,8 @@ in function parameter, then we can create variable below like const product= pro
 
 we can pass background="red" with props and use background keyword where we want to use it in component. 
 if we have multiple props and pass one prop with its name like card, we can use ...restProps to add other props. 
+
+
+Lec 14. Responding to Events. 
+we will create function and can use onClick={handleFunction(propsName)} in this way. we can also place 
+onClick={(=> handleFunction(prop))} if any issue. 

@@ -1,4 +1,4 @@
-export function ProductCard({product, background="slategray"}) {
+export function ProductCard({product, background="slategray", onClick, ...restProps}) {
  
   // const product = props.product;
     
@@ -6,6 +6,7 @@ export function ProductCard({product, background="slategray"}) {
     //   function getProductTitle(title) {
     //     return title;
     //   }
+    
 
     return  <article style={{display:"flex", flexDirection:"column", justifyContent:"center", alignItems:"center", border:"2px solid white", gap:"16"}}>
         {/* <h2>{getProductTitle(product.title)}</h2> use this if want to use function to pass data*/}
@@ -18,7 +19,7 @@ export function ProductCard({product, background="slategray"}) {
         <li style={{background:"peru"}}>{product.specification[1]}</li>
         <li style={{background:"orange"}}>{product.specification[2]}</li>
       </ul>
-      <button>{product.price}</button>
+      <button onClick={()=> onClick(product)}>{product.price}</button>
     </article>
     
   }
