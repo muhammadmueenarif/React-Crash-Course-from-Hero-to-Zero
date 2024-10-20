@@ -101,3 +101,8 @@ variables and keys of object so that's why camel case.
 Lec 11. Using variables in JSX.
 How to pass data as props or objects instead of writing it as directly. also learned how to call a function inside jsx. 
 we will use double curly braces to specify styles. style={{boreder:"10px"}}
+
+Lec 12. Passing props to components. 
+React component use props to communicate with each other. parents pass data to child as props. once we pass 
+as props then we need to read that props in the child component where we want to access that. 
+it does not matter how many props we pass as all will be grouped under one object. 
