@@ -20,7 +20,29 @@ export function ProductCard({product, background="slategray", onClick, ...restPr
           return <li key={index}>{spec}</li> //if we remove key we get error in console
         })}
       </ul>
+      <Status stockCount={product.stockCount} />
+      {/* if  productCount is 0 and not avaiable then buy button will not be displayed*/}
+      {product.stockCount >0 && (
       <button onClick={()=> onClick(product)}>{product.price}</button>
+    )}
     </article>
     
+  }
+
+  function Status({stockCount}) {
+    // if else
+    // if (stockCount===0) {
+    //   return <p style={{color:"lightsalmon"}}>Not Available</p>
+    // } 
+    // return <p style={{color:"lightgreen"}}> {stockCount} items available</p>
+
+    // instead of if else we can use ternary operator
+    const notAvailableTemplate = (<p style={{color:"lightsalmon"}}>Not Available</p> )
+    const availableTemplate = (    <p style={{color:"lightgreen"}}> {stockCount} items available</p> )
+    // instead of writing complete expression in ? and :, we just put variable. 
+    return stockCount===0? notAvailableTemplate
+    : availableTemplate
+
+
+  
   }

@@ -135,3 +135,13 @@ Fragment does not accepts key so we will need to import fragment. and we can pas
 render a list of children without adding extra nodes to the DOM. it is used when we want to render multiple 
 components but do not want to add extra nodes to the DOM.
 
+
+Lec 17. Conditional Rendering
+you might want to display a list of elements only if the list is not empty and if it's empty, just display 
+a message list is empty. Or another example, you might need to display different content one for logged in user and another
+one for guest user.
+
+Imagine you have a limited number of products which are available, and you need to display which products are not
+available or in case if it's available, how many items user can buy, and about the buy button view display status
+product available or not.
+if product not available then buy button will not show. 

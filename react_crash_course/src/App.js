@@ -13,6 +13,7 @@ function App() {
         "3 or 5 max sound",
         "5 hours battery",
       ],
+      stockCount:10,
       price: 999,
     },
     {
@@ -23,6 +24,7 @@ function App() {
         "3 or 5 max sound",
         "5 hours battery",
       ],
+      stockCount:0,
       price: 1299,
     },
     {
@@ -33,6 +35,7 @@ function App() {
         "3 or 5 max sound",
         "5 hours battery",
       ],
+      stockCount:6,
       price: 1499,
     },
   ];
