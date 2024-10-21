@@ -3,55 +3,60 @@ import { ProductCard } from "./components/ProductCard";
 import { ProductList } from "./components/ProductList";
 
 function App() {
-  const products = [{
-    imgSrc: "https://via.placeholder.com/128x128",
-    title: "Product 1",
-    specification: [
-      "i8 Pro Items available",
-      "3 or 5 max sound",
-      "5 hours battery",
-    ],
-    price: 999,
-  }, 
-  {
-    imgSrc: "https://via.placeholder.com/128x128",
-    title: "Product 2",
-    specification: [
-      "i7 Pro Items available",
-      "3 or 5 max sound",
-      "5 hours battery",
-    ],
-    price: 1299,
-  }, 
-  {
-    imgSrc: "https://via.placeholder.com/128x128",
-    title: "Product 3",
-    specification: [
-      "i9 Pro Items available",
-      "3 or 5 max sound",
-      "5 hours battery",
-    ],
-    price: 1499,
-  }
-]
+  const products = [
+    {
+      imgSrc: "https://via.placeholder.com/128x128",
+      title: "Product 1",
+      specification: [
+        "i8 Pro Items available",
+        "3 or 5 max sound",
+        "5 hours battery",
+      ],
+      price: 999,
+    },
+    {
+      imgSrc: "https://via.placeholder.com/128x128",
+      title: "Product 2",
+      specification: [
+        "i7 Pro Items available",
+        "3 or 5 max sound",
+        "5 hours battery",
+      ],
+      price: 1299,
+    },
+    {
+      imgSrc: "https://via.placeholder.com/128x128",
+      title: "Product 3",
+      specification: [
+        "i9 Pro Items available",
+        "3 or 5 max sound",
+        "5 hours battery",
+      ],
+      price: 1499,
+    },
+  ];
 
-function handleClick(product) {
-  alert(`You clicked on ${product.title} which costs ${product.price}`)
-}
+  function handlePurchase(product) {
+    alert(`You clicked on ${product.title} which costs ${product.price}`);
+  }
 
   return (
     <div className="App">
       <ProductList>
-        <ProductCard product={products[0]} onClick={handleClick}/>
+        {products.map((product) => { //map method iterates each item in array and return that item.  
+          return <ProductCard key={product.title} product={product} onPurchase={handlePurchase} />;
+          //we need key for product as react need specific id to render the specific product else it will 
+          //render all item and cannot figure which item i need to make changes.  not good to use array index as 
+          //key as array index can be deleed or change and cause issues. 
+          //if we remove key we get error in console
+        })} 
       </ProductList>
-
-      <ProductList>
-        <ProductCard product={products[1]} onClick={handleClick} />
-      </ProductList>
-
-      <ProductList>
-        <ProductCard product={products[2]} onClick={handleClick}/>
-      </ProductList>
+      <h2>Product which costs upto 1400$:</h2>
+      <ul>
+        {products.filter(({price})=> price<1400).map(({title, price})=> (
+          <li> {title} costs ${price} </li>
+        ))}
+      </ul>
     </div>
   );
 }

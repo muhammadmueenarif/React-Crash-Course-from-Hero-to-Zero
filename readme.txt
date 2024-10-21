@@ -119,3 +119,9 @@ if we have multiple props and pass one prop with its name like card, we can use 
 Lec 14. Responding to Events. 
 we will create function and can use onClick={handleFunction(propsName)} in this way. we can also place 
 onClick={(=> handleFunction(prop))} if any issue. 
+
+Lec 15. Rendering Lists. 
+learn js array method to manipulate array of data. filter and map methods to filter and transform array of data. 
+Render product using map method. we need to pass a key of prop that should be unique about each item because 
+react need specific id to render the specific product else it will render all item and cannot figure which 
+item i need to make changes. it is not good to use array index as key as array index can be deleed or change and cause issues.

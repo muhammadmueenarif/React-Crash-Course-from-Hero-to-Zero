@@ -15,9 +15,10 @@ export function ProductCard({product, background="slategray", onClick, ...restPr
       <img src={product.imgSrc} alt={product.title} />
       <p>Product Description</p>
       <ul>
-        <li style={{background}}>{product.specification[0]}</li>
-        <li style={{background:"peru"}}>{product.specification[1]}</li>
-        <li style={{background:"orange"}}>{product.specification[2]}</li>
+        {product.specification.map((spec, index)=> {
+          //not good practice to use array index as key as key prop can be deleed or change and cause issues. 
+          return <li key={index}>{spec}</li> //if we remove key we get error in console
+        })}
       </ul>
       <button onClick={()=> onClick(product)}>{product.price}</button>
     </article>
