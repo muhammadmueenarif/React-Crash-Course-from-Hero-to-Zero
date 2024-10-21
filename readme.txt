@@ -125,3 +125,13 @@ learn js array method to manipulate array of data. filter and map methods to fil
 Render product using map method. we need to pass a key of prop that should be unique about each item because 
 react need specific id to render the specific product else it will render all item and cannot figure which 
 item i need to make changes. it is not good to use array index as key as array index can be deleed or change and cause issues.
+
+Lec 16. Fragment Component
+What are and why need? 
+React Fragment is special component allows you to group components. Fragment component not rendered and only visible 
+for react. 
+Fragment does not accepts key so we will need to import fragment. and we can pass key to fragment. <fragment key={title}></fragment>  
+
+render a list of children without adding extra nodes to the DOM. it is used when we want to render multiple 
+components but do not want to add extra nodes to the DOM.
+

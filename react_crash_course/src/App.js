@@ -1,5 +1,6 @@
 import "./App.css";
-import { ProductCard } from "./components/ProductCard";
+import { ProductCard } from "./components/ProductCard";    
+import { Fragment }from "react";
 import { ProductList } from "./components/ProductList";
 
 function App() {
@@ -52,11 +53,14 @@ function App() {
         })} 
       </ProductList>
       <h2>Product which costs upto 1400$:</h2>
-      <ul>
+
         {products.filter(({price})=> price<1400).map(({title, price})=> (
-          <li> {title} costs ${price} </li>
+          <Fragment key={title}>
+          <hr style={{borderColor:"slategray"}}/>
+            <p> {title} costs ${price} </p>
+          </Fragment>
         ))}
-      </ul>
+
     </div>
   );
 }

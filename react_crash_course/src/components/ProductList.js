@@ -1,3 +1,7 @@
 export function ProductList(props) {
-  return <div>{props.children}</div>;
+  return (
+    <>
+    <h2>Products</h2>
+    <div>{props.children}</div>;</>
+  )
 }
