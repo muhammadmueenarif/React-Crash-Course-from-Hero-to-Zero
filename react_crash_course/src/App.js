@@ -3,6 +3,15 @@ import { ProductCard } from "./components/ProductCard";
 import { Fragment }from "react";
 import { ProductList } from "./components/ProductList";
 
+const styles = {
+  ListDivider:{
+    borderColor:"slategray",
+  },
+  ListTitle:{
+    margin:"8px 0",
+  },
+}
+
 function App() {
   const products = [
     {
@@ -59,8 +68,8 @@ function App() {
 
         {products.filter(({price})=> price<1400).map(({title, price})=> (
           <Fragment key={title}>
-          <hr style={{borderColor:"slategray"}}/>
-            <p> {title} costs ${price} </p>
+          <hr style={styles.ListDivider}/>
+            <p style={styles.ListTitle}> {title} costs ${price} </p>
           </Fragment>
         ))}
 

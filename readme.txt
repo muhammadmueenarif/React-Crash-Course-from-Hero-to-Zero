@@ -145,3 +145,32 @@ Imagine you have a limited number of products which are available, and you need 
 available or in case if it's available, how many items user can buy, and about the buy button view display status
 product available or not.
 if product not available then buy button will not show. 
+
+Lec 18. Styling in React. 
+Using inline Styles
+we use inline styling with {{}}. outer braces are for js object and second braces are for css structure object. 
+css also written in camel case. in simple css we write border-radius but here we will write borderRadius. 
+Also we will use className instead of simple class keyword. we can write at the top of file and store them in 
+variable and use them in component. const styles= {
+    container: {
+        width: '100%',
+        height: '100vh',
+        backgroundColor: 'red',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        },
+        list:{
+            listStyle: 'none',
+            padding: 0,
+            margin: 0,
+            display: 'flex',
+            flexWrap: 'wrap',
+            justifyContent: 'center',
+        }
+}
+
+and use variable name instead of complete code. we can use dynamic variable and dynamic styles and pass them. 
+not recommended for large and complex projects. difficult to maintain. it does not support many css features.
+like hover, active, focus placeholder etc.,it does not support media queries. does not support animation and 
+difficult to override.  
