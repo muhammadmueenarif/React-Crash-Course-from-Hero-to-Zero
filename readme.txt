@@ -201,5 +201,12 @@ we can also define css variables in global file and use them in all the applicat
 utility classes like we use tailwind css. 
 
 Lec 22. Alternative Styling Options. 
- 
+SaaS preprocessor that extends css features like variable. we can also do nesting in css with SaaS as nav {
+    ul{
+        //write properties here. margin, padding 0. 
+    }
+} 
 
+we can also use mixins where we can pass props and use props. it also has some arrays, loops. but we need to
+configure it in webpack and some other configuration properly. we can use tailwind css and other things, 
+tailwind has limited design flexibility. we cannot do everythnig with it. 
