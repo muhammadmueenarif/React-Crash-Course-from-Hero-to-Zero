@@ -191,3 +191,15 @@ different class name.
 
 it has pros that it does not allow to apply some dynamic styles based on state or props. also the process of css 
 module may require additional configuration in build process. 
+
+
+Lec 21. Using global css
+global file is place in root of application. in our case it is index.css. the first case is that we can define 
+styles for html tags like body. it is global because it is applied to all components of page and we can write 
+font family font style color background margin etc., and set style for different texts like heading paragraph. 
+we can also define css variables in global file and use them in all the application. we can also define some 
+utility classes like we use tailwind css. 
+
+Lec 22. Alternative Styling Options. 
+ 
+
