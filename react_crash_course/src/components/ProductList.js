@@ -1,16 +1,10 @@
-const styles= {
-    List: {
-        gap:"16px",
-        display: "flex",
-        marginBottom:"36px"
-    }
-}
+import "./ProductList.css"
 
 export function ProductList(props) {
   return (
     <>
     <h2>Products</h2>
-    <div style={styles.List}>
+    <div className="List">
         {props.children}
         </div>
     </>

@@ -174,3 +174,11 @@ and use variable name instead of complete code. we can use dynamic variable and 
 not recommended for large and complex projects. difficult to maintain. it does not support many css features.
 like hover, active, focus placeholder etc.,it does not support media queries. does not support animation and 
 difficult to override.  
+
+Lec 19. Using css files. 
+ALways keep styles for each component in separate file. it will help to import only needed styles and keep code clean. 
+as we have separate file for app.css. place css file in same folder of that component. name css classes as pascal 
+case like App. using separate css file has advantages like using keyframes, animation, hover, active, focus,
+media queries. file divided into components and reduce duplication. Disadvantage is that need to manage proper 
+class name. if not managed can cause a lot of errors and overrite the styles. 
+
