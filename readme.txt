@@ -182,3 +182,12 @@ case like App. using separate css file has advantages like using keyframes, anim
 media queries. file divided into components and reduce duplication. Disadvantage is that need to manage proper 
 class name. if not managed can cause a lot of errors and overrite the styles. 
 
+Lec 20. Using CSS Modules. 
+change the name of file from ProductCard.css to ProductCard.module.css. and then import it as styles object. 
+import styles from './ProductCard.css'; then we will give className as className={styles.container}
+using css module has same advantages as separate css file. it prevents global style conflict. it does not overrite
+styles with other components. also class name is dynamicaly generated and unique. if you inspect elements you will see
+different class name.
+
+it has pros that it does not allow to apply some dynamic styles based on state or props. also the process of css 
+module may require additional configuration in build process. 

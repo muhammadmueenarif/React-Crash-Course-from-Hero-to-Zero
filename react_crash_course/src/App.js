@@ -1,4 +1,4 @@
-import "./App.css";
+import styles from "./App.module.css";
 import { ProductCard } from "./components/ProductCard";    
 import { Fragment }from "react";
 import { ProductList } from "./components/ProductList";
@@ -45,7 +45,7 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <div className={styles.App}>
       <ProductList>
         {products.map((product) => { //map method iterates each item in array and return that item.  
           return <ProductCard key={product.title} product={product} onPurchase={handlePurchase} />;
@@ -59,8 +59,8 @@ function App() {
 
         {products.filter(({price})=> price<1400).map(({title, price})=> (
           <Fragment key={title}>
-          <hr className="ListDivider"/>
-            <p className="ListTitle"> {title} costs ${price} </p>
+          <hr className={styles.ListDivider}/>
+            <p className={styles.ListTitle}> {title} costs ${price} </p>
           </Fragment>
         ))}
 
