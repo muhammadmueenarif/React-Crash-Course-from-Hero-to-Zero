@@ -299,3 +299,11 @@ how to update nested states.
 Lec 28. Adding / Deleting items in Array State. 
 how to add / delete items from array state. when we see some product we like, we mark it as favourite, we will 
 do this. 
+
+
+Lec 29. Updating items in array state. 
+import { products as productsData } from "./data/products";
+const [products, setProducts] = useState(products);
+
+we are importing products from another file and also using products as variable in same file so we will do 
+import products as productsData instead of products.

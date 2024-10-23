@@ -2,48 +2,12 @@ import styles from "./App.module.css";
 import { useState } from "react";
 import { ProductCard } from "./components/ProductCard";    
 import { Fragment }from "react";
+import { products as productsData } from "./data/products";
 import { ProductList } from "./components/ProductList";
 import { ProductFilter } from "./components/ProductFIlter";
 function App() {
-  const products = [
-    {
-      id:1,
-      imgSrc: "https://via.placeholder.com/128x128",
-      title: "Product 1",
-      specification: [
-        "i8 Pro Items available",
-        "3 or 5 max sound",
-        "5 hours battery",
-      ],
-      stockCount:10,
-      price: 999,
-    },
-    {
-      id:2,
-      imgSrc: "https://via.placeholder.com/128x128",
-      title: "Product 2",
-      specification: [
-        "i7 Pro Items available",
-        "3 or 5 max sound",
-        "5 hours battery",
-      ],
-      stockCount:0,
-      price: 1299,
-    },
-    {
-      id:3,
-      imgSrc: "https://via.placeholder.com/128x128",
-      title: "Product 3",
-      specification: [
-        "i9 Pro Items available",
-        "3 or 5 max sound",
-        "5 hours battery",
-      ],
-      stockCount:6,
-      price: 1499,
-    },
-  ];
 
+  const [products, setProducts] = useState(productsData);
   const [filters, setFilters] = useState({
     price:{
       min:0,
@@ -53,8 +17,13 @@ function App() {
 
     const [favorites, setFavorites] = useState([]);
 
-  function handlePurchase(product) {
-    alert(`You clicked on ${product.title} which costs ${product.price}`);
+  function handlePurchase(productId, stockCount) {
+    // alert(`You clicked on ${product.title} which costs ${product.price}`);
+    // update stock count
+    setProducts((prevProducts) => prevProducts.map((product) => product.id === productId? 
+    {...product, stockCount: stockCount} : product
+      )
+    );
   }
 
   function handleFilter(key, value) {
@@ -84,7 +53,8 @@ function App() {
     <div className={styles.App}>
       <ProductList>
         {products.map((product) => { //map method iterates each item in array and return that item.  
-          return <ProductCard key={product.title} product={product} 
+          return <ProductCard key={product.title} product={product}
+          isFavorite={favorites.includes(product.id)} 
           onPurchase={handlePurchase}
           onFavorite={handleFavorite} />;
           //we need key for product as react need specific id to render the specific product else it will 

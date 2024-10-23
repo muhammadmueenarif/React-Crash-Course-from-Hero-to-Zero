@@ -16,13 +16,14 @@ export function ProductCard({ product, background = "slategray", onPurchase, onF
   const [showMore, setShowMore] = useState(false); //by default no text in it.
 
   function handleClick() {
-    setStockCount((prevStockCount) => prevStockCount -1);
-    onPurchase(product);
+    // setStockCount((prevStockCount) => prevStockCount -1);
+    onPurchase(product.id, product.stockCount - 1);
   }
 
   function handleTwoClicks() {
-    setStockCount( (prevStockCount) => prevStockCount - 1); //6-1
-    setStockCount((prevStockCount) => prevStockCount - 1);  //5-1     
+    // setStockCount( (prevStockCount) => prevStockCount - 1); //6-1
+    // setStockCount((prevStockCount) => prevStockCount - 1);  //5-1
+    onPurchase(product.id, product.stockCount - 1);     
   }
 
   return (
@@ -49,15 +50,15 @@ export function ProductCard({ product, background = "slategray", onPurchase, onF
           })}
         </ul>
       )}
-      <Status stockCount={stockCount} />
+      <Status stockCount={product.stockCount} />
       {/* if  productCount is 0 and not avaiable then buy button will not be displayed*/}
-      {stockCount > 0 && (
+      {product.stockCount > 0 && (
         <>
           <p>Price: {product.price}</p>
           <button onClick={handleClick}>{product.price}</button>
         </>
       )}
-      {stockCount > 1 && <button onClick={handleTwoClicks}>Buy 2</button>
+      {product.stockCount > 1 && <button onClick={handleTwoClicks}>Buy 2</button>
     }
     </article>
   );
