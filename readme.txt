@@ -233,3 +233,13 @@ rack does not store local variable values between render.
 
 if we want to use local variable then we should store static data information in it. the data which will never be changed.
 and for internal component details data that can be changes use component state. 
+
+Lec 25. useState Hook 
+hooks are js function that allow to use some react features and normally start with prefix use. useState helps to
+manage state inside component. first import hook from react library. 
+const [stockCount, setStockCount] = useState(product.stockCount); it has 2 items. first is value and 2 is 
+method to set this value. as it is destruction, we can name this variable which we want. in the right side 
+after the useState keyword, we provided initial value for the state. 
+if we render the same components three times, and each copy have a completely different state. changing state 
+in one component won't affect others. hooks start with a prefix use, and should be defined at top of component.
+it cannot be defined inside loops, nested functions, or some conditions. It should be defined only at the top of your component.
