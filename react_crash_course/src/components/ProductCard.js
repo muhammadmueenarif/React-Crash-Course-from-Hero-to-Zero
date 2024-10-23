@@ -1,10 +1,8 @@
 import styles from "./ProductCard.module.css";
 import { useState } from "react";
-export function ProductCard({
-  product,
-  background = "slategray",
-  onPurchase,
-  ...restProps
+export function ProductCard({ product, background = "slategray", onPurchase, onFavorite,
+  isFavorite,
+   ...restProps
 }) {
   // const product = props.product;
 
@@ -30,7 +28,9 @@ export function ProductCard({
   return (
     <article className={styles.Container} style={{ background }}>
       {/* <h2>{getProductTitle(product.title)}</h2> use this if want to use function to pass data*/}
-
+      <button className="styles.Favourite" onClick={()=> onFavorite(product.id)}>
+        {isFavorite ? '' : 'favorite'}
+      </button>
       <h2 style={{ fontSize: "30px", color: "red" }}>{product.title}</h2>
       <img src={product.imgSrc} alt={product.title} />
       <p>

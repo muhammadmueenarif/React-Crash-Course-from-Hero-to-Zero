@@ -294,5 +294,8 @@ how to manipulate object states. this allows you to filter products based on min
 to update the object state we will need two values as in our case, filter product has two values minimum and max. 
 also we will pass two parameters in function. to update the state of object, we will need to have previous state 
 because filter has two properties minimum value and max value. at a time, we will need to update only one of them. 
-
 how to update nested states. 
+
+Lec 28. Adding / Deleting items in Array State. 
+how to add / delete items from array state. when we see some product we like, we mark it as favourite, we will 
+do this. 

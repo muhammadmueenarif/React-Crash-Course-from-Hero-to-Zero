@@ -7,6 +7,7 @@ import { ProductFilter } from "./components/ProductFIlter";
 function App() {
   const products = [
     {
+      id:1,
       imgSrc: "https://via.placeholder.com/128x128",
       title: "Product 1",
       specification: [
@@ -18,6 +19,7 @@ function App() {
       price: 999,
     },
     {
+      id:2,
       imgSrc: "https://via.placeholder.com/128x128",
       title: "Product 2",
       specification: [
@@ -29,6 +31,7 @@ function App() {
       price: 1299,
     },
     {
+      id:3,
       imgSrc: "https://via.placeholder.com/128x128",
       title: "Product 3",
       specification: [
@@ -48,6 +51,8 @@ function App() {
     },
     other:"other value"});
 
+    const [favorites, setFavorites] = useState([]);
+
   function handlePurchase(product) {
     alert(`You clicked on ${product.title} which costs ${product.price}`);
   }
@@ -64,11 +69,24 @@ function App() {
    }))
   }
 
+  function handleFavorite(productId) {
+    // check if product already exist in favorite
+    if (favorites.includes(productId)) {
+      //remove
+      setFavorites((prevFavorites)=> prevFavorites.filter(id => id !== productId))
+    }
+    else {
+      //add
+      setFavorites((prevFavorites)=> [...prevFavorites, productId]);
+    }
+  }
   return (
     <div className={styles.App}>
       <ProductList>
         {products.map((product) => { //map method iterates each item in array and return that item.  
-          return <ProductCard key={product.title} product={product} onPurchase={handlePurchase} />;
+          return <ProductCard key={product.title} product={product} 
+          onPurchase={handlePurchase}
+          onFavorite={handleFavorite} />;
           //we need key for product as react need specific id to render the specific product else it will 
           //render all item and cannot figure which item i need to make changes.  not good to use array index as 
           //key as array index can be deleed or change and cause issues. 
