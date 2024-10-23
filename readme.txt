@@ -210,3 +210,16 @@ SaaS preprocessor that extends css features like variable. we can also do nestin
 we can also use mixins where we can pass props and use props. it also has some arrays, loops. but we need to
 configure it in webpack and some other configuration properly. we can use tailwind css and other things, 
 tailwind has limited design flexibility. we cannot do everythnig with it. 
+
+Lec 23. Managing states 
+Component life cycle and state. 
+component lives on page for some period and goes through stages of mounting >>updating >> unmounting. 
+we can consider as birth, growth and death of process. mounting is when component added to the DOM. then the 
+updating state is triggered each time after prop or state changes and after this the component will display updated 
+information on the page. this process is called rendering. 
+when component removed from DOM, and state is also cleared. when component removed from DOM it is no more needed 
+so react clear its all states. 
+state is special js object that can store data inside component. also the state of component can be changed during
+lifecycle of component and also one component is unmounted. when unmounted state is destroyed.
+props: data shared from parent to child component and cannot be changed directly. 
+state: data which local component has and can be changed directly.  
