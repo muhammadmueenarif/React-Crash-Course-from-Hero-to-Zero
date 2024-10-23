@@ -223,3 +223,13 @@ state is special js object that can store data inside component. also the state 
 lifecycle of component and also one component is unmounted. when unmounted state is destroyed.
 props: data shared from parent to child component and cannot be changed directly. 
 state: data which local component has and can be changed directly.  
+
+Lec 24. Component state and Local Variable. 
+local variable changes does not trigger a render in react component. it means data on page won't be updated. 
+if we want to update everytime, we will use component state. don't use local variables. value of local variable 
+don't store between renders.
+for example if any text in component updates and we have local variable with set value then it will be reset because 
+rack does not store local variable values between render. 
+
+if we want to use local variable then we should store static data information in it. the data which will never be changed.
+and for internal component details data that can be changes use component state. 

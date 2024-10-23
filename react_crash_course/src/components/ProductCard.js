@@ -8,6 +8,14 @@ export function ProductCard({product, background="slategray", onPurchase, ...res
     //     return title;
     //   }
     
+    let stockCount = product.stockCount;
+
+    function handleClick() {
+      stockCount = stockCount - 1;
+      console.log("Stock Count:", stockCount);
+      
+      onPurchase(product);
+    }
 
     return  <article className={styles.Container} style={{background}}>
         {/* <h2>{getProductTitle(product.title)}</h2> use this if want to use function to pass data*/}
@@ -21,10 +29,10 @@ export function ProductCard({product, background="slategray", onPurchase, ...res
           return <li key={index}>{spec}</li> //if we remove key we get error in console
         })}
       </ul>
-      <Status stockCount={product.stockCount} />
+      <Status stockCount={stockCount} />
       {/* if  productCount is 0 and not avaiable then buy button will not be displayed*/}
-      {product.stockCount >0 && (
-      <button onClick={()=> onPurchase(product)}>{product.price}</button>
+      {stockCount >0 && (
+      <button onClick={handleClick}>{product.price}</button>
     )}
     </article>
     
