@@ -243,3 +243,30 @@ after the useState keyword, we provided initial value for the state.
 if we render the same components three times, and each copy have a completely different state. changing state 
 in one component won't affect others. hooks start with a prefix use, and should be defined at top of component.
 it cannot be defined inside loops, nested functions, or some conditions. It should be defined only at the top of your component.
+
+Lec 26. Batch updating of useState. 
+how to perform multiple state update in one events. sometime maybe we need it so we should know how to solve it. 
+function handleTwoClicks() {
+    setStockCount(stockCount - 1); //6 -1 .
+    setStockCount(stockCount - 1); //6 -1  
+    console.log("stock count is", stockCount);
+    // onPurchase(product);
+  }
+
+when we call function, then stock count will decrease by 1 not by 2 because react does not update state immediately. 
+it schedule and updates for next component render. it waits until all code in event handler has run before processing 
+some state updates. this help to optimize the performance and reduce number of components render.
+first 6-1. when we click again 6-1. when we console then also 6 because it does not update the value. it will wait 
+until the old code will run and then update the value. to fix this, we can use previous state. 
+
+  function handleClick() {
+    setStockCount((prevStockCount) => prevStockCount -1);
+    onPurchase(product);
+  }
+
+  function handleTwoClicks() {
+    setStockCount( (prevStockCount) => prevStockCount - 1); //6-1
+    setStockCount((prevStockCount) => prevStockCount - 1);  //5-1     
+  }
+
+  if we work with api or some other dynamic values, this is much safer.  
