@@ -58,6 +58,7 @@ background and minheight,color of .app-header and paste in index.css.
 in index.css, remove all except .app and write max width 960px, margin 0 auto, and padding 64,16,16px.  
 anything that will be returning will show on screen. 
 
+
 Lec 6. Developer tools.
 What is browser? developer tools? why we need? chrome browser developer tools let you edit pages directly and 
 diagnose problems easily. right click and inspect. first tab is element where we can see html Structure.
@@ -77,13 +78,16 @@ Lec 7. Creating Components
 introduction. 
 How to import and export. 
 
+
 Lec 8. create first react component. 
+
 Lec 9. Create separate component file. 
 in previous lecture we created a component in same app.js main file but in this we will create separate folder 
 of components and place all components in that folder. if we want to create separate component then first we 
 need to export it and then import the component in the file where we want to use it. 
 if we write export default component then we can import it directly but if we write export keyword before function
 keyword then we do not need to export it at the end of page. but we will need to import it in {}. 
+
 
 Lec 10. Writing Markup with JSX. 
 JSX has strcit rules. first is that we can only return one element from react component. if we want to return
@@ -102,10 +106,12 @@ Lec 11. Using variables in JSX.
 How to pass data as props or objects instead of writing it as directly. also learned how to call a function inside jsx. 
 we will use double curly braces to specify styles. style={{boreder:"10px"}}
 
+
 Lec 12. Passing props to components. 
 React component use props to communicate with each other. parents pass data to child as props. once we pass 
 as props then we need to read that props in the child component where we want to access that. 
 it does not matter how many props we pass as all will be grouped under one object. 
+
 
 Lec 13. Components props manipulation. 
 we can use props keyword to access all props in child. if we want to use only one prop then we can pass it in 
@@ -120,11 +126,13 @@ Lec 14. Responding to Events.
 we will create function and can use onClick={handleFunction(propsName)} in this way. we can also place 
 onClick={(=> handleFunction(prop))} if any issue. 
 
+
 Lec 15. Rendering Lists. 
 learn js array method to manipulate array of data. filter and map methods to filter and transform array of data. 
 Render product using map method. we need to pass a key of prop that should be unique about each item because 
 react need specific id to render the specific product else it will render all item and cannot figure which 
 item i need to make changes. it is not good to use array index as key as array index can be deleed or change and cause issues.
+
 
 Lec 16. Fragment Component
 What are and why need? 
@@ -145,6 +153,7 @@ Imagine you have a limited number of products which are available, and you need 
 available or in case if it's available, how many items user can buy, and about the buy button view display status
 product available or not.
 if product not available then buy button will not show. 
+
 
 Lec 18. Styling in React. 
 Using inline Styles
@@ -175,12 +184,14 @@ not recommended for large and complex projects. difficult to maintain. it does n
 like hover, active, focus placeholder etc.,it does not support media queries. does not support animation and 
 difficult to override.  
 
+
 Lec 19. Using css files. 
 ALways keep styles for each component in separate file. it will help to import only needed styles and keep code clean. 
 as we have separate file for app.css. place css file in same folder of that component. name css classes as pascal 
 case like App. using separate css file has advantages like using keyframes, animation, hover, active, focus,
 media queries. file divided into components and reduce duplication. Disadvantage is that need to manage proper 
 class name. if not managed can cause a lot of errors and overrite the styles. 
+
 
 Lec 20. Using CSS Modules. 
 change the name of file from ProductCard.css to ProductCard.module.css. and then import it as styles object. 
@@ -200,6 +211,7 @@ font family font style color background margin etc., and set style for different
 we can also define css variables in global file and use them in all the application. we can also define some 
 utility classes like we use tailwind css. 
 
+
 Lec 22. Alternative Styling Options. 
 SaaS preprocessor that extends css features like variable. we can also do nesting in css with SaaS as nav {
     ul{
@@ -210,6 +222,7 @@ SaaS preprocessor that extends css features like variable. we can also do nestin
 we can also use mixins where we can pass props and use props. it also has some arrays, loops. but we need to
 configure it in webpack and some other configuration properly. we can use tailwind css and other things, 
 tailwind has limited design flexibility. we cannot do everythnig with it. 
+
 
 Lec 23. Managing states 
 Component life cycle and state. 
@@ -224,6 +237,7 @@ lifecycle of component and also one component is unmounted. when unmounted state
 props: data shared from parent to child component and cannot be changed directly. 
 state: data which local component has and can be changed directly.  
 
+
 Lec 24. Component state and Local Variable. 
 local variable changes does not trigger a render in react component. it means data on page won't be updated. 
 if we want to update everytime, we will use component state. don't use local variables. value of local variable 
@@ -234,6 +248,7 @@ rack does not store local variable values between render.
 if we want to use local variable then we should store static data information in it. the data which will never be changed.
 and for internal component details data that can be changes use component state. 
 
+
 Lec 25. useState Hook 
 hooks are js function that allow to use some react features and normally start with prefix use. useState helps to
 manage state inside component. first import hook from react library. 
@@ -243,6 +258,7 @@ after the useState keyword, we provided initial value for the state.
 if we render the same components three times, and each copy have a completely different state. changing state 
 in one component won't affect others. hooks start with a prefix use, and should be defined at top of component.
 it cannot be defined inside loops, nested functions, or some conditions. It should be defined only at the top of your component.
+
 
 Lec 26. Batch updating of useState. 
 how to perform multiple state update in one events. sometime maybe we need it so we should know how to solve it. 
@@ -270,3 +286,13 @@ until the old code will run and then update the value. to fix this, we can use p
   }
 
   if we work with api or some other dynamic values, this is much safer.  
+
+
+Lec 27. Managing COmplex States. 
+how to update object and nested objects correctly. but first we need to create product filter component to show
+how to manipulate object states. this allows you to filter products based on minimum and maximum price.
+to update the object state we will need two values as in our case, filter product has two values minimum and max. 
+also we will pass two parameters in function. to update the state of object, we will need to have previous state 
+because filter has two properties minimum value and max value. at a time, we will need to update only one of them. 
+
+how to update nested states. 

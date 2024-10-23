@@ -1,8 +1,9 @@
 import styles from "./App.module.css";
+import { useState } from "react";
 import { ProductCard } from "./components/ProductCard";    
 import { Fragment }from "react";
 import { ProductList } from "./components/ProductList";
-
+import { ProductFilter } from "./components/ProductFIlter";
 function App() {
   const products = [
     {
@@ -40,8 +41,27 @@ function App() {
     },
   ];
 
+  const [filters, setFilters] = useState({
+    price:{
+      min:0,
+      max:999,
+    },
+    other:"other value"});
+
   function handlePurchase(product) {
     alert(`You clicked on ${product.title} which costs ${product.price}`);
+  }
+
+  function handleFilter(key, value) {
+  //filter has min 0, max 99 and we want to update max to 500. 
+   setFilters((prevFilters)=> ({
+    ...prevFilters, 
+    // [key]:value,
+    price: {
+      ...prevFilters.price,
+      [key]: value, 
+    },
+   }))
   }
 
   return (
@@ -55,9 +75,10 @@ function App() {
           //if we remove key we get error in console
         })} 
       </ProductList>
-      <h2>Product which costs upto 1400$:</h2>
+      <h2>Product Filtered by Price</h2>
+      <ProductFilter filters={filters} onFilter={handleFilter}/>
 
-        {products.filter(({price})=> price<1400).map(({title, price})=> (
+        {products.filter(({price})=> price>=filters.price.min &&price<=filters.price.max).map(({title, price})=> (
           <Fragment key={title}>
           <hr className={styles.ListDivider}/>
             <p className={styles.ListTitle}> {title} costs ${price} </p>
